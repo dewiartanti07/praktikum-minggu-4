@@ -1,0 +1,503 @@
+/* ── RESET & BASE ───────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  background: linear-gradient(90deg, #a9d6ff, #ffc1e6);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ── NAVBAR ─────────────────────────────────── */
+.navbar {
+  background: linear-gradient(90deg, #a9d6ff, #ffc1e6);
+  padding: 0 32px;
+  height: 64px;
+}
+.navbar {
+  background: linear-gradient(90deg, #a9d6ff, #ffc1e6);
+  padding: 0 32px;
+  height: 64px;
+
+  /* Tambahkan ini: */
+  display: flex;
+  align-items: center;       /* vertikal center semua item */
+  justify-content: space-between;  /* logo kiri, menu tengah, tombol kanan */
+}
+/* Navbar normal */
+.navbar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+/* Navbar saat scroll */
+.navbar.scrolled{
+  background: linear-gradient(90deg, #c8e8ff, #ffe0f2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #100101d0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  color: #ffc1e6;
+  font-size: 1.5rem;
+}
+
+/* Menu Links */
+.navbar__links {
+  display: flex;          /* list item jadi horizontal */
+  gap: 32px;
+  list-style: none;
+}
+
+.navbar__links a {
+  color: #0b0101;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.navbar__links a:hover {
+  color: #0b0101;
+}
+
+/* Tombol CTA */
+.btn-primary {
+  background-color: 2px solid #7dd3fc;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #7dd3fc;
+  color: #ffffff;
+}
+/* ── HERO ───────────────────────────────────── */
+.hero {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.hero__content {
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  background-color: rgba(108, 99, 255, 0.2);
+  color: #a29bfe;
+  border: 1px solid #6c63ff;
+  padding: 4px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #f28ff2;
+}
+
+.hero__desc {
+  color: #0b0101;
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  border: 2px solid #7dd3fc;
+  color: #7dd3fc;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: #7dd3fc;
+  color: #ffffff;
+}
+/* ── CONTAINER (utility class) ──────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── SKILLS SECTION ─────────────────────────── */
+.skills {
+  padding: 96px 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 56px;
+}
+
+/* ── CSS GRID: 3 kolom ──────────────────────── */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── SKILL CARD ─────────────────────────────── */
+.skill-card {
+  background-color: rgba(255,255,255,0.9);
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+/* ════════════════════════════════════════════
+   RESPONSIVE DESIGN — Mobile First Override
+   Breakpoints: 768px (tablet), 1024px (desktop)
+═══════════════════════════════════════════════ */
+
+/* ── TABLET & ke bawah (max 1023px) ────────── */
+@media (max-width: 1023px) {
+
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 kolom -> 2 kolom */
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ── MOBILE (max 767px) ─────────────────────── */
+@media (max-width: 767px) {
+
+  /* Navbar: sembunyikan menu, tampilkan hamburger (sederhana) */
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar__links {
+    display: none; /* sembunyikan menu di mobile */
+  }
+
+  /* Hero: font lebih kecil */
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__desc {
+    font-size: 1rem;
+  }
+
+  /* Skills: 1 kolom di mobile */
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Container: padding lebih kecil */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Skills section: padding lebih kecil */
+  .skills {
+    padding: 64px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  background-color: #1a1a2e;
+  padding: 32px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer__copy {
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__links a {
+  color: #888888;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ── TENTANG SAYA SECTION ── */
+.about-me {
+  padding: 96px 0;
+  text-align: center;
+}
+.about-me__photo {
+  display: flex;
+  justify-content: center; /* menengahkan foto */
+}
+
+.about-me__photo img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  margin: 24px 0;
+}
+
+/* Grid biodata */
+.biodata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left; /* label di kiri, value di kanan */
+
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(169, 214, 255, 0.6);
+  border-radius: 10px;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.biodata-item .label {
+  font-weight: 700;
+  color: #6c63ff; /* highlight seperti navbar/tombol */
+  margin-right: 8px;
+}
+/* Responsive untuk mobile */
+@media (max-width: 767px) {
+  .about-me__photo img {
+    width: 150px;
+  }
+
+  .biodata-grid {
+    grid-template-columns: 1fr; /* 1 kolom di mobile */
+  }
+}
+/* ── CONTACT SECTION ── */
+.contact {
+  padding: 96px 0;
+  text-align: center;
+}
+
+.contact__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+#portfolio{
+  padding: 40px;
+  text-align: center;
+}
+
+.portfolio-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-box{
+  width: 250px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.portfolio-box img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+.portfolio-box a{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.portfolio-box a:hover{
+  background: #45a049;
+}
+
+/* Tombol dark mode */
+.dark-btn {
+  padding: 8px 16px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Gaya saat dark mode aktif — diapply ke <body> */
+.dark-mode {
+  background-color: #1a1a2e !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .dark-btn {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+/* Transisi halus untuk semua elemen saat mode berubah */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html{
+  scroll-behavior: smooth;
+}
+section{
+  min-height: 50vh;
+}
+.form-section { padding: 60px 20px; max-width: 500px; margin: 0 auto; }
+.form-container { display: flex; flex-direction: column; gap: 12px; }
+.form-container input,
+.form-container textarea {
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #2E74B5;
+}
+#btn-kirim {
+  padding: 14px;
+  background: #2E74B5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btn-kirim:hover { background: #1F4E79; }
+.feedback { padding: 12px 16px; border-radius: 8px; font-size: 14px; }
+.feedback.error { background: #FEE2E2; color: #DC2626; border: 1px solid #FECACA; }
+.feedback.success { background: #DCFCE7; color: #16A34A; border: 1px solid #BBF7D0; }
+.hidden { display: none; }
