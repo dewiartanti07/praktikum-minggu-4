@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum Minggu 3 - Layout</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+    <!-- ── NAVBAR ─────────────────────── -->
+  <nav class="navbar">
+    <button id="dark-toggle" class="dark-btn">🌙 Dark Mode</button>
+    <div class="navbar__logo">
+      <span class="logo-icon">&#9670;</span>
+      <span class="logo-text">TanStudio</span>
+    </div>
+
+    <ul class="navbar__links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="navbar__cta">
+      <a href="#" class="btn-primary">Hire Me</a>
+    </div>
+  </nav>
+    <!-- ── HERO SECTION ────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero__content">
+      <span class="hero__badge">Available for Work</span>
+      <h1 class="hero__title">
+        Halo, saya <span class="highlight">Dewi Artanti</span><br>
+        Web Developer
+      </h1>
+      <p class="hero__desc">
+        Saya membangun website yang cepat, responsif, dan tampak profesional.
+        Ayo buat sesuatu yang luar biasa bersama.
+      </p>
+      <div class="hero__actions">
+        <a href="#portfolio" class="btn-outline">Lihat Portfolio</a>
+        <a href="#contact" class="btn-outline">Hubungi Saya</a>
+      </div>
+    </div>
+  </section>
+  <!-- ── TENTANG SAYA SECTION ── -->
+<section class="about-me" id="about" data-aos="fade-up">
+  <div class="container about-me__inner">
+    <h2 class="section-title">Tentang Saya</h2>
+
+    <!-- FOTO -->
+    <div class="about-me__photo">
+      <img src="images/foto.jpeg" alt="Foto Saya">
+    </div>
+
+    <!-- BIODATA RAPIH -->
+    <div class="biodata-grid">
+      <div class="biodata-item"><span class="label">Nama:</span> Dewi Artanti </div>
+      <div class="biodata-item"><span class="label">Tempat, Tanggal Lahir:</span> Medan, 07 Agustus 2006</div>
+      <div class="biodata-item"><span class="label">Status:</span> Mahasiswa </div>
+      <div class="biodata-item"><span class="label">Agama:</span> Islam </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ── SKILLS SECTION ──────────────── -->
+  <section class="skills" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Keahlian Saya</h2>
+      <p class="section-subtitle">Teknologi yang saya kuasai</p>
+
+      <div class="skills__grid">
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#128195;</div>
+          <h3>HTML5</h3>
+          <p>Semantic markup, aksesibilitas, dan struktur dokumen yang baik.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#127912;</div>
+          <h3>CSS3</h3>
+          <p>Flexbox, Grid, animasi, dan responsive design untuk semua layar.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#9889;</div>
+          <h3>JavaScript</h3>
+          <p>DOM manipulation, Fetch API, dan logika interaktif modern.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#128279;</div>
+          <h3>Git & GitHub</h3>
+          <p>Version control, branching, dan kolaborasi tim secara profesional.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#9881;</div>
+          <h3>React</h3>
+          <p>Component-based development dengan hooks dan state management.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">&#128640;</div>
+          <h3>Performance</h3>
+          <p>Optimasi loading, image compression, dan Core Web Vitals.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="portfolio" data-aos="fade-up">
+  <h2>Portfolio</h2>
+
+  <div class="portfolio-container">
+
+    <div class="portfolio-box">
+      <img src="images/project1.png" alt="Project 1">
+      <h3>Form Login Java</h3>
+      <p>Aplikasi login menggunakan Java Swing.</p>
+    </div>
+
+    <div class="portfolio-box">
+      <img src="images/project2.png" alt="Project 2">
+      <h3>Form Login Python</h3>
+      <p>Aplikasi login menggunakan python.</p>
+    </div>
+
+    <div class="portfolio-box">
+      <img src="images/project3.png" alt="Project 3">
+      <h3>Implementasi Binary Tree</h3>
+      <p>Implementasi binary tree dengan VS Code</p>
+    </div>
+
+  </div>
+</section>
+  <!-- ── CONTACT SECTION ── -->
+<section class="contact" id="contact" data-aos="fade-up">
+  <div class="container contact__inner">
+    <h2 class="section-title">Hubungi Saya</h2>
+    <p class="section-subtitle">Klik tombol di bawah untuk langsung menghubungi saya</p>
+
+    <div class="contact-buttons">
+      <!-- Email -->
+      <a href="dewiartanti78@gmail.com" class="btn-primary">✉️ Email Saya</a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/6281260300458" target="_blank" class="btn-primary">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-container">
+    <input type="text" id="input-nama" placeholder="nama lengkap" />
+    <input type="email" id="input-email" placeholder="alamat email" />
+    <textarea id="input-pesan" placeholder="pesan kamu..." rows="4"></textarea>
+    <button id="btn-kirim">Kirim Pesan</button>
+    <div id="form-feedback" class="feedback hidden"></div>
+  </div>
+</section>
+  <!-- ── FOOTER ──────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__brand">&#9670; TanStudio</span>
+        <p class="footer__copy">
+          &copy; 2026 Dewi Artanti. Dibuat dengan HTML & CSS murni.
+        </p>
+        <div class="footer__links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
